@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function openBtnFunc () {
         popup.classList.remove('hide');
         popup.classList.add('show');
-        swiper.update()
     }
     windowClose.addEventListener('click', closeBtnFunc);
     btnClose.addEventListener('click', closeBtnFunc);
