@@ -1,0 +1,241 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 500ms;
+  overflow: hidden;
+
+  &__bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 300;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 640px;
+    height: auto;
+    box-sizing: border-box;
+    background: #fff;
+    transition: all .5s ease-in-out;
+    z-index: 500;
+    box-shadow: 0px 20px 80px rgba(0, 30, 104, 0.15);
+    border-radius: 16px;
+    @media (min-width: 1280px) {
+      max-height: 420px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      padding: 71.23px 14px 66.68px;
+      width: 48.44%;
+      background: #341A9B;
+      border-radius: 16px 0 0 16px;
+    }
+
+    .image-left {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+
+    &:before {
+      @media (min-width: 768px) {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+        height: 40px;
+        display: block;
+        background: url("../img/image-bg-top.svg") no-repeat 50%/cover;
+      }
+      @media (min-width: 1280px) {
+        width: 310px;
+        height: 49px;
+      }
+    }
+
+    &:after {
+      @media (min-width: 768px) {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 159px;
+        height: 31px;
+        display: block;
+        background: url("../img/image-bg-bottom.svg") no-repeat 50%/cover;
+      }
+      @media (min-width: 1280px) {
+        width: 310px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__right {
+    padding: 20px 16px 35px;
+
+    @media (min-width: 768px) {
+      padding: 62px 24px 54px 20px;
+      width: 52%;
+    }
+
+    .title {
+      margin-bottom: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 20px;
+      color: #2F2F2F;
+
+      @media (min-width: 768px) {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .subtitle {
+      margin-bottom: 24px;
+      text-align: center;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      color: #4A5265;
+
+      @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    .form {
+      &-control {
+        position: relative;
+
+        &__label-placeholder {
+          position: absolute;
+          color: transparent;
+        }
+
+        &__input {
+          padding: 12px 10px;
+          border: 2px solid #BEC8D2;
+          border-radius: 4px;
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          cursor: pointer;
+
+          &::placeholder{
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: #4A5265;
+          }
+        }
+
+        & input:focus {
+          outline: 0;
+          border-color: #341A9B;
+        }
+
+        &.success input {
+          border-color: #BEC8D2;
+        }
+
+        &.error input {
+          border-color: #FF4545;
+        }
+
+        & .small {
+          position: absolute;
+          bottom: -14px;
+          left: 0;
+          color: #FF4545;
+          font-size: 12px;
+          visibility: hidden;
+        }
+
+        &.error .small {
+         visibility: visible;
+        }
+      }
+
+
+
+
+      & .button {
+        width: 100%;
+      }
+
+      & > * + * {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 22px;
+    right: 28.72px;
+    transform: rotate(0);
+    transition: all .6s ease;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(180deg);
+      transition: all .6s ease;
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+    z-index: -555;
+  }
+
+  &.show {
+    opacity: 1;
+    z-index: 555;
+  }
+}
+
+
+.popup-open {
+  display: flex;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: #f3f37f;
+  color: #585555;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="manifest" href="">
+    <link rel="apple-touch-icon" href="">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<button class="popup-open">Open popup</button>
+<div class="popup hide">
+    <div class="popup__bg"></div>
+    <div class="popup__content">
+        <a class="popup__btn-close">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.50005 1.50007L7.00011 7.00012M12.5002 12.5002L7.00011 7.00012M7.00011 7.00012L12.5002 1.50007M7.00011 7.00012L1.50005 12.5002"
+                      stroke="#ED2E5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+        </a>
+
+        <div class="popup__wrapper">
+            <div class="popup__left">
+                <picture>
+                    <source srcset="../assets/img/image-left.png" media="(min-width: 768px)">
+                    <img class="image-left" src="../assets/img/bg-left-mobile.png" alt="MDN">
+                </picture>
+            </div>
+
+            <div class="popup__right">
+                <div class="title">Комплексна веб-розробка для бізнесу</div>
+                <div class="subtitle">Надсилайте заявку і ми
+                    зв’яжемось з вами</div>
+                <form id="form" class="form">
+                    <div class="form-control">
+                        <label class="form-control__label-placeholder" for="username"></label>
+                        <input class="form-control__input" type="text" id="username" placeholder="Ім’я" title="Ім’я"/>
+                        <div class="small" id="small">Error text</div>
+                    </div>
+
+                    <div class="form-control">
+                        <label class="form-control__label-placeholder" for="tel"></label>
+                        <input class="form-control__input" type="text" id="tel" placeholder="+380 97 111 22 33" title="Тел."  pattern="+[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}"/>
+                        <div class="small">Error text</div>
+                    </div>
+
+
+                    <button class="button"  rel="nofollow"><span>В кабінет</span></button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/common.js"></script>
+</body>
+</html>
