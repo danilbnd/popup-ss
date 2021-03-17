@@ -36,15 +36,11 @@ function showSuccess(input, message) {
     formControl.className = "form-control success";
 }
 
-function getFieldName(input) {
-    return input.title.charAt(0).toUpperCase() + input.title.slice(1);
-}
-
-
 function checkRequired(inputs) {
     inputs.forEach((input) => {
         if (input.value.trim() === "") {
-            showError(input, `Поле ${getFieldName(input)} обязательно для заполнения`);
+            showError(input, `Надсилайте заявку і ми зв’яжемось з вами. `);
+
         } else {
             showSuccess(input);
         }
